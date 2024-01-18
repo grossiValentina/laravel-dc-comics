@@ -14,6 +14,7 @@
                     <th scope="col">serie</th>
                     <th scope="col">data</th>
                     <th scope="col">tipologia</th>
+                    <th scope="col">seleziona</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,6 +28,9 @@
                         <td>{{ $comic->series }}</td>
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->type }}</td>
+                        <td>
+                            <a class="btn btn-primary" href="{{ route('comics.show', ['comic' => $comic->id]) }}">dettagli</a>
+                        </td>
                     </tr>
                 @endforeach
 

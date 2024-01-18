@@ -2,8 +2,9 @@
 
 @section('content')
     <div class="container">
+        <h2 class="text-center pt-4">lista dei fumetti</h2>
 
-        <table class="table table-striped">
+        <table class="table table-striped pt-4 m-auto">
             <thead>
                 <tr>
                     <th scope="col">titolo</th>

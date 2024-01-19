@@ -22,8 +22,10 @@
                 @foreach ($comics as $comic)
                     <tr>
                         <th scope="row">{{ $comic->title }}</th>
-                        <td>{{ $comic->description }}</td>
-                        <td>{{ $comic->thumb }}</td>
+                        <!--Str::words limita il numero di parole in una stringa (4 parole)-->
+                        <td>{{ Str::words($comic->description, 4) }}</td>
+                        <!--Str::limit tronca la stringa data alla lunghezza specificata (10 caratteri)-->
+                        <td>{{ Str::limit($comic->thumb, 10) }}</td>
                         <td>{{ $comic->price }}</td>
                         <td>{{ $comic->series }}</td>
                         <td>{{ $comic->sale_date }}</td>

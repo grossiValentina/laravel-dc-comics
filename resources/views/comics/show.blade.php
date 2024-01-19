@@ -10,6 +10,8 @@
               <p class="card-text text-center">Tipo: {{ $comic->type }}</p>
               <h6 class="text-center">{{ $comic->price }}</h6>
               <p class="card-text text-center">Serie: {{ $comic->series }}</p>
+              <p class="card-text text-center">{{ $comic->sale_date }}</p>
+              <p class="card-text text-center">{{ $comic->type }}</p>
             </div>
           </div>
 

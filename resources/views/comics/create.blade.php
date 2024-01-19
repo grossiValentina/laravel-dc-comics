@@ -16,7 +16,7 @@
 
                     <div class="mb-3">
                         <label for="decription" class="form-label">Descrizione</label>
-                        <input type="text" class="form-control" id="description" name="description">
+                        <textarea class="form-control" id="description" name="description"></textarea>
                     </div>
 
                     <div class="mb-3">
@@ -36,7 +36,7 @@
 
                     <div class="mb-3">
                         <label for="sale_date" class="form-label">Data</label>
-                        <input type="data" class="form-control" id="sale_date" name="sale_date">
+                        <input type="text" class="form-control" id="sale_date" name="sale_date">
                     </div>
 
                     <div class="mb-3">

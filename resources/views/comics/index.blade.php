@@ -34,9 +34,11 @@
                         <td>{{ $comic->series }}</td>
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->type }}</td>
-                        <td class="d-flex">
-                            <a class="btn btn-primary me-2" href="{{ route('comics.show', ['comic' => $comic->id]) }}">dettagli</a>
-                            <a class="btn btn-warning me-2" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">modifica</a>
+                        <td>
+                            <a class="btn btn-primary" href="{{ route('comics.show', ['comic' => $comic->id]) }}">dettagli</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-warning" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">modifica</a>
                         </td>
                     </tr>
                 @endforeach

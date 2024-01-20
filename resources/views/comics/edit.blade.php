@@ -9,8 +9,10 @@
 <div class="row justify-content-center pt-3">
     <div class="col-6">
 
-        <form action="">
-        
+        <form action="{{ route('comics.update', ['comic' => $comic->id]) }}" method="POST">
+            @csrf
+            @method('PUT')
+
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo</label>
                 <input type="text" class="form-control" id="title" name="title" value="{{ $comic->title }}">

@@ -6,7 +6,14 @@
             <h2 class="text-center">Lista dei Fumetti</h2>
             <a class="btn btn-primary" href="{{ route('comics.create') }}">Crea un nuovo fumetto</a>
         </div>
-       
+
+        @if (Session::has('messaggio'))
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Ben Fatto!</h4>
+                <p>{{ Session::get('messaggio') }}</p>
+            </div>
+        @endif
+
 
         <table class="table table-striped pt-4 m-auto">
             <thead>
@@ -35,16 +42,18 @@
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->type }}</td>
                         <td>
-                            <a class="btn btn-primary" href="{{ route('comics.show', ['comic' => $comic->id]) }}">dettagli</a>
+                            <a class="btn btn-primary"
+                                href="{{ route('comics.show', ['comic' => $comic->id]) }}">dettagli</a>
                         </td>
                         <td>
-                            <a class="btn btn-warning" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">modifica</a>
+                            <a class="btn btn-warning"
+                                href="{{ route('comics.edit', ['comic' => $comic->id]) }}">modifica</a>
                         </td>
                         <td>
                             <form action="{{ route('comics.destroy', ['comic' => $comic->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                
+
                                 <button class="btn btn-danger" type="submit">cancella</button>
                             </form>
                         </td>

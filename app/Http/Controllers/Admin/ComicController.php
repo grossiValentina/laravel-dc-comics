@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
+use Faker\Core\Color;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -96,6 +97,9 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        $comic->delete();
+
+        return redirect()->route('comics.index');
     }
 }

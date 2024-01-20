@@ -40,6 +40,14 @@
                         <td>
                             <a class="btn btn-warning" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">modifica</a>
                         </td>
+                        <td>
+                            <form action="{{ route('comics.destroy', ['comic' => $comic->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                
+                                <button class="btn btn-danger" type="submit">cancella</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
 

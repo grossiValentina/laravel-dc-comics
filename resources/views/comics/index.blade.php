@@ -2,7 +2,11 @@
 
 @section('content')
     <div class="container">
-        <h2 class="text-center pt-4">lista dei fumetti</h2>
+        <div class="d-flex mt-4 mb-4 justify-content-around">
+            <h2 class="text-center">Lista dei Fumetti</h2>
+            <a class="btn btn-primary" href="{{ route('comics.create') }}">Crea un nuovo fumetto</a>
+        </div>
+       
 
         <table class="table table-striped pt-4 m-auto">
             <thead>
@@ -30,8 +34,9 @@
                         <td>{{ $comic->series }}</td>
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->type }}</td>
-                        <td>
-                            <a class="btn btn-primary" href="{{ route('comics.show', ['comic' => $comic->id]) }}">dettagli</a>
+                        <td class="d-flex">
+                            <a class="btn btn-primary me-2" href="{{ route('comics.show', ['comic' => $comic->id]) }}">dettagli</a>
+                            <a class="btn btn-warning me-2" href="{{ route('comics.edit', ['comic' => $comic->id]) }}">modifica</a>
                         </td>
                     </tr>
                 @endforeach
